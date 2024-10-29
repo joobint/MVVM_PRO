@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.app.machinetest.ui.splash_screen.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.app.machinetest.ui.product_list.ProductListFragment"
+        android:label="ProductListFragment" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.app.machinetest.ui.product_details.ProductDetailsFragment"
+        android:label="ProductDetailsFragment">
+        <argument
+            app:argType="string"
+            android:defaultValue="@null"
+            android:name="product_id"
+            app:nullable="true"
+            />
+    </fragment>
+
+</navigation>
